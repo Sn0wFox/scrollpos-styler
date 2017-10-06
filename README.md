@@ -2,6 +2,8 @@
 
 Simple JavaScript to add a custom CSS class to an HTML element depending on the window's scroll position. One CSS class is added when scrolling below a certain position, and another one is added when scrolling above that position.
 
+Original author: [acch](https://github.com/acch/scrollpos-styler).
+
 ## Background and Motivation
 
 [Bootstrap](http://getbootstrap.com) v3 has a JavaScript component named Affix. [Affix](http://getbootstrap.com/javascript/#affix) can be used to modify CSS properties of an element when reaching a certain scroll position. The main use case for it is to change positioning of the element when scrolling past the element - i.e. switching from relative to fixed positioning so that the element remains visible when otherwise the user would scroll past it.
