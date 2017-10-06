@@ -2,7 +2,11 @@
   "name": "scrollpos-styler",
   "version": "1.0.0",
   "description": "JavaScript to add custom CSS class to a HTML element depending on scroll position",
-  "main": "scrollPosStyler.js",
+  "main": "index.js",
+  "typings": "index",
+  "scripts": {
+    "start": "tsc"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sn0wfox/scrollpos-styler.git"
