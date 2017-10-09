@@ -10,6 +10,14 @@
  * ======================================================================== */
 
 namespace ScrollPosStyler {
+
+  export interface Options {
+    scrollOffsetY?: number;
+    spsClass?: string;
+    classAbove?: string;
+    classBelow?: string;
+    offsetTag?: string;
+  }
   
   /* ====================
    * private variables
@@ -39,7 +47,7 @@ namespace ScrollPosStyler {
   /* ====================
    * private function to check scroll position
    * ==================== */
-  function onScroll() {
+  function onScroll(): void {
     // ensure that events don't stack
     if (!busy) {
       // find elements to update
@@ -60,11 +68,11 @@ namespace ScrollPosStyler {
   /* ====================
    * private function to find elements to update
    * ==================== */
-  function getElementsToUpdate() {
+  function getElementsToUpdate(): any[] {
     // get current scroll position from window
     scrollPosY = window.pageYOffset;
 
-    let elementsToUpdate = [];
+    let elementsToUpdate: any[] = [];
 
     // iterate over elements
     // for (let elem of elements) {
@@ -103,7 +111,7 @@ namespace ScrollPosStyler {
   /* ====================
    * private function to update elements
    * ==================== */
-  function updateElements(elementsToUpdate) {
+  function updateElements(elementsToUpdate: any[]): void {
     // iterate over elements
     // for (let elem of elements) {
     for (let i = 0; elementsToUpdate[i]; ++i) { // chrome workaround
@@ -129,7 +137,7 @@ namespace ScrollPosStyler {
    *    offsetTag (String): HTML tag used on the element to specify a scrollOffsetY other than the default.
    *
    * ==================== */
-  export function init(options) {
+  export function init(options?: Options): void {
     // suspend accepting scroll events
     busy = true;
 
