@@ -8,6 +8,13 @@
  * Licensed under MIT (https://github.com/acch/scrollpos-styler/blob/master/LICENSE)
  * ======================================================================== */
 declare namespace ScrollPosStyler {
-    function init(options: any): void;
+    interface Options {
+        scrollOffsetY?: number;
+        spsClass?: string;
+        classAbove?: string;
+        classBelow?: string;
+        offsetTag?: string;
+    }
+    function init(options?: Options): void;
 }
 export = ScrollPosStyler;
