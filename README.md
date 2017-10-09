@@ -2,9 +2,12 @@
 
 Simple JavaScript to add a custom CSS class to an HTML element depending on the window's scroll position. One CSS class is added when scrolling below a certain position, and another one is added when scrolling above that position.
 
+This version is written in typescript and allows you to import the script using ES6
+or Typescript syntax, and therefore bundle it with webpack or similar tools.
+
 Original author: [acch](https://github.com/acch/scrollpos-styler).
 
-## Background and Motivation
+## Original background and motivation
 
 [Bootstrap](http://getbootstrap.com) v3 has a JavaScript component named Affix. [Affix](http://getbootstrap.com/javascript/#affix) can be used to modify CSS properties of an element when reaching a certain scroll position. The main use case for it is to change positioning of the element when scrolling past the element - i.e. switching from relative to fixed positioning so that the element remains visible when otherwise the user would scroll past it.
 
@@ -22,16 +25,23 @@ This script is designed to modify attributes OTHER THAN an element's position. I
 
 ## Installation
 
-Several options are available:
+You'll find the original package on npm, but not this one.
+I'll publish it if someone asks, but otherwise you can still install it like this:
 
-- Download the latest [release](https://github.com/acch/scrollpos-styler/releases/latest)
-- Clone the repo: `git clone https://github.com/acch/scrollpos-styler.git`
-- Install with [Bower](http://bower.io/): `bower install scrollpos-styler`
-- Install with [npm](https://www.npmjs.com/): `npm install scrollpos-styler`
+    npm i -S git://github.com/Sn0wFox/scrollpos-styler.git#master
 
 ## Usage
 
-Simply import the `scrollPosStyler.js` script into your HTML page at the very end of the body element. Then, add the `.sps` class to the element(s) which you want to style. Define the two CSS classes `.sps--abv` and `.sps--blw` and you're all set!
+If you're _old school_ you can import the script `index.js` into your HTML page at the very end of the body element.
+If you're using more modern tools, you can import it ES6 style
+
+    import {ScrolPosStyler} from "scrollpos-styler";
+    
+or TypeScript style
+
+    import * as ScrolPosStyler from "scrollpos-styler";
+
+Then, add the `.sps` class to the element(s) which you want to style. Define the two CSS classes `.sps--abv` and `.sps--blw` and you're all set!
 
 The `.sps--abv` class will be added to your element when the window is scrolled above the defined position, and `.sps--blw` will be applied when it is scrolled below that position.
 
